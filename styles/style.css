@@ -58,6 +58,9 @@ nav a {
 	text-transform: uppercase;
 	letter-spacing: 2px;
 }
+nav a:hover {
+	text-decoration: underline black;
+}
 
 .logo {
 	height: 60px;
@@ -115,6 +118,9 @@ h1 {
 	font-weight: 400;
 	font-style: normal;
 	font-size: 24px;
+}
+.current {
+	font-style: italic;
 }
 .error {
 	background-color: rgba(220, 194, 194, 0.494);
@@ -280,7 +286,7 @@ h1 {
 	width: 15px;
 	height: 15px;
 	background: rgba(0, 0, 0, 0.3);
-	margin: 0 12px;
+	margin: 12px;
 	cursor: pointer;
 }
 .slider-indicator.current-slide {
