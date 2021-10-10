@@ -1,0 +1,801 @@
+* {
+	font-family: bilo, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	color: black;
+	text-decoration: none;
+}
+
+/*General*/
+body {
+	min-height: 100vh;
+	margin: 0px;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	position: relative;
+}
+
+header {
+	height: 120px;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+.hamburger-label {
+	font-size: 24px;
+}
+#hamburger-menu {
+	display: none;
+}
+
+#hamburger-menu:checked ~ nav {
+	display: block;
+}
+
+nav {
+	display: none;
+	position: absolute;
+	top: 80px;
+	left: 0px;
+	background: white;
+	padding: 0px 20px 5px 20px;
+	margin-top: 20px;
+	z-index: 1;
+}
+
+nav ul {
+	padding: 0px;
+}
+
+nav li {
+	padding: 10px;
+	display: block;
+}
+
+nav a {
+	font-size: 1.1em;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.logo {
+	height: 60px;
+	padding: 5px;
+}
+
+footer {
+	margin-top: auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	background-color: #9816ea;
+	padding: 5px;
+}
+
+footer ul {
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+}
+footer li {
+	display: block;
+	padding: 5px;
+}
+
+footer a,
+footer i {
+	padding: 2px;
+	font-size: 16px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: white;
+}
+
+.banner-background {
+	margin-bottom: 8px;
+	width: 100%;
+	height: 58px;
+	background-size: cover;
+	background-position: center;
+	text-align: center;
+	background-image: url("../images/boston-public-library-SvGzLn7y_sw-unsplash-kopi.jpg");
+}
+
+h1 {
+	display: inline-block;
+	border: black solid 0.4px;
+	padding: 0px 10px;
+	margin: 12px auto;
+	width: fit-content;
+	background-color: white;
+	font-family: linotype-didot, serif;
+	text-transform: capitalize;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 24px;
+}
+.error {
+	background-color: rgba(220, 194, 194, 0.494);
+	font-size: 20px;
+	color: lightcoral;
+	padding: 20px;
+	width: fit-content;
+	margin: 0 auto;
+}
+.loader {
+	width: 60px;
+	height: 60px;
+	margin: 50px auto;
+	border: 8px solid #9816ea;
+	border-top: 8px solid transparent;
+	border-radius: 50%;
+	animation: spin 0.5s linear 0s infinite;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0);
+	}
+	to {
+		transform: rotate(358deg);
+	}
+}
+
+/*Home page*/
+.banner-background-thin {
+	margin: 0;
+	width: 100%;
+	height: 20px;
+	background-size: cover;
+	background-position: top;
+	text-align: center;
+	background-image: url("../images/boston-public-library-SvGzLn7y_sw-unsplash-kopi.jpg");
+}
+.intro {
+	background-size: cover;
+	background-position: center;
+	background-image: url("../images/pexels-cottonbro-5379178.jpg");
+	height: 360px;
+	margin-bottom: 20px;
+}
+.intro-blur {
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.4);
+	position: relative;
+}
+.intro p {
+	font-family: linotype-didot, serif;
+	font-size: 24px;
+	text-align: center;
+	letter-spacing: 2px;
+	top: 20%;
+	left: 10%;
+	width: 150px;
+	position: absolute;
+	display: block;
+	color: white;
+	margin: 0;
+}
+.intro-logo {
+	font-family: linotype-didot, serif;
+	font-style: italic;
+	font-size: 32px;
+	text-transform: capitalize;
+	color: white;
+}
+.intro a {
+	font-style: italic;
+	text-decoration: underline;
+	color: #bbbbbb;
+	position: absolute;
+	top: 58%;
+	left: 10%;
+}
+
+.more-link {
+	display: none;
+}
+.slide a img {
+	width: 100%;
+	height: 40%;
+	object-fit: cover;
+}
+.slide a h2 {
+	font-family: linotype-didot, serif;
+	font-size: 22px;
+	text-transform: capitalize;
+	letter-spacing: 1px;
+	margin: 2px 0px;
+}
+.slide a h3 {
+	font-style: italic;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.4px;
+	color: #27b91b;
+	margin: 5px 0px;
+}
+.slide a h4 {
+	margin: 5px 0px;
+}
+.slide a {
+	font-size: 14px;
+}
+
+.slider {
+	position: relative;
+	height: 620px;
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-bottom: 80px;
+}
+.slider-track-container {
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+.slider-track {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	position: relative;
+	height: 100%;
+	transition: transform 200ms ease-in;
+}
+.slide {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	width: 100%;
+}
+.slider-button {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: transparent;
+	border: 0;
+	cursor: pointer;
+}
+.slider-button i {
+	font-size: 30px;
+}
+.slider-button-left {
+	left: -32px;
+}
+.slider-button-right {
+	right: -32px;
+}
+
+.slider-nav {
+	display: flex;
+	justify-content: center;
+	padding: 10px 0;
+}
+.slider-indicator {
+	border: 0;
+	border-radius: 50%;
+	width: 15px;
+	height: 15px;
+	background: rgba(0, 0, 0, 0.3);
+	margin: 0 12px;
+	cursor: pointer;
+}
+.slider-indicator.current-slide {
+	background: rgba(0, 0, 0, 0.7);
+}
+
+.is-hidden {
+	display: none;
+}
+
+/*contact page*/
+
+.contact-page-title {
+	width: 200px;
+	margin-left: 20%;
+	margin-bottom: 5px;
+	margin-top: 40px;
+	font-family: linotype-didot, serif;
+	font-style: italic;
+	font-size: 24px;
+}
+
+.contact-table-container {
+	width: 80%;
+	margin: auto auto 60px auto;
+	padding: 20px;
+	border-top: 1px solid #b87edc;
+	border-bottom: 1px solid #b87edc;
+}
+
+td {
+	font-size: 14px;
+	font-family: linotype-didot, serif;
+	letter-spacing: 1px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+}
+.contact-form {
+	width: 100px;
+}
+.formError {
+	display: none;
+	color: rgb(241, 86, 86);
+	font-size: 14px;
+	margin-top: 2px;
+}
+
+input,
+textarea {
+	background-color: #efefef;
+	border: hidden;
+	width: 100%;
+	margin-top: 2px;
+	padding: 5px;
+}
+
+.contact-label-container label {
+	display: block;
+	margin-top: 20px;
+	text-transform: uppercase;
+	font-size: 12px;
+	color: rgb(99, 99, 99);
+}
+
+.contact-button-container button {
+	background: rgb(14, 14, 14);
+	border: none;
+	font-family: linotype-didot, serif;
+	font-size: 16px;
+	letter-spacing: 1px;
+	width: 150px;
+	height: 30px;
+	padding: 5px;
+	color: rgb(255, 255, 255);
+	margin-top: 20px;
+	cursor: pointer;
+}
+
+.unvalidform,
+.validform {
+	margin: 20px;
+	font-style: italic;
+}
+
+/*blog*/
+.blog {
+	display: grid;
+	grid-template-columns: repeat(1, minmax(0, 1fr));
+	gap: 30px;
+	margin: 30px auto;
+	width: 60%;
+	display: grid;
+}
+.blog a:hover {
+	background-color: rgb(238, 238, 238);
+}
+
+.blog img {
+	object-fit: cover;
+	width: 100%;
+}
+.post-line {
+	margin-top: 10px;
+	border-bottom: 1px solid black;
+}
+
+.blog p {
+	font-style: italic;
+	font-size: 14px;
+	font-weight: 400;
+	letter-spacing: 2px;
+}
+.blog h2 {
+	font-family: linotype-didot, serif;
+	font-size: 24px;
+	text-transform: capitalize;
+	letter-spacing: 1px;
+	margin: 2px 0px;
+}
+
+.blog h3 {
+	font-style: italic;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.4px;
+	color: #27b91b;
+	margin: 2px 0px;
+}
+.blog h4 {
+	margin: 0px;
+}
+
+.button-container {
+	text-align: center;
+}
+
+.button-container button {
+	background: rgb(14, 14, 14);
+	border: none;
+	font-family: linotype-didot, serif;
+	font-size: 16px;
+	letter-spacing: 1px;
+	width: 190px;
+	height: 50px;
+	padding: 5px;
+	color: rgb(255, 255, 255);
+	margin: 20px;
+	cursor: pointer;
+}
+
+/*Blog specific page*/
+.specific-post-header {
+	border-top: solid 1px black;
+	border-bottom: solid 1px black;
+	padding-left: 10%;
+	padding-right: 5%;
+	margin-top: 20px;
+}
+
+.specific-post-header h2 {
+	font-family: linotype-didot, serif;
+	font-size: 34px;
+	text-transform: capitalize;
+	letter-spacing: 1px;
+	margin: 5px 0px;
+}
+.specific-post-header h3 {
+	font-style: italic;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.4px;
+	color: #27b91b;
+	margin: 5px 0px;
+}
+.specific-post-header h4 {
+	margin: 5px 0px;
+}
+.specific-post-header p {
+	margin: 5px 0px;
+}
+
+.featured-img img {
+	margin-top: 20px;
+	width: 100%;
+	height: 300px;
+	object-fit: cover;
+}
+
+.post-content {
+	width: 90%;
+	margin: 20px auto;
+}
+.post-content p {
+	letter-spacing: 0.7px;
+	line-height: 22px;
+}
+
+/*blog specific images*/
+.post-content img {
+	width: 100%;
+	height: 100%;
+}
+
+.is-style-default img {
+	object-fit: cover;
+	cursor: pointer;
+	transition: 0.4s;
+}
+
+.is-style-default img:hover {
+	opacity: 0.8;
+}
+
+.modal {
+	z-index: 1;
+	display: none;
+	padding-top: 10px;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.8);
+}
+.modal-content {
+	margin: auto;
+	display: block;
+	width: 80%;
+	max-width: 400px;
+	animation-name: zoom;
+	animation-duration: 0.6s;
+}
+#img01 {
+	width: 100%;
+	object-fit: cover;
+}
+@keyframes zoom {
+	from {
+		transform: scale(0);
+	}
+	to {
+		transform: scale(1);
+	}
+}
+.close {
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: #f1f1f1;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+	color: #bbb;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/*About page*/
+.about-img {
+	margin-top: 30px;
+	background-image: url("/images/pexels-cottonbro-6474585.jpg");
+	background-size: cover;
+	background-position-y: 24%;
+	height: 140px;
+}
+.who-are-we-container {
+	display: flex;
+	width: 88%;
+	margin: 40px auto;
+}
+.who-are-we-container > * {
+	flex: 1 auto;
+}
+.item-1 {
+	background-image: url("/images/boston-public-library-SvGzLn7y_sw-unsplash.jpg");
+	background-position-x: 60%;
+	background-size: auto;
+}
+.item-2 {
+	padding: 14px;
+	width: 40%;
+}
+.item-2 h2 {
+	margin-top: 5px;
+}
+
+.item-2 p {
+	font-size: 14px;
+	margin: 14px 0px;
+	letter-spacing: 1px;
+}
+@media (min-width: 400px) {
+	.intro {
+		height: 600px;
+	}
+	.slider {
+		height: 460px;
+	}
+	.intro p {
+		font-size: 38px;
+		top: 15%;
+		left: 10%;
+		width: 240px;
+	}
+	.intro-logo {
+		font-size: 42px;
+	}
+	.intro a {
+		font-size: 24px;
+		top: 50%;
+		left: 16%;
+	}
+}
+@media (min-width: 800px) {
+	/*general*/
+	header label {
+		display: none;
+	}
+	header {
+		justify-content: space-evenly;
+	}
+	nav {
+		display: contents;
+		margin: 0px;
+		position: static;
+		top: 0px;
+	}
+	nav ul {
+		display: flex;
+		justify-content: space-around;
+		width: 60%;
+	}
+	nav li {
+		display: inline-block;
+	}
+	footer {
+		height: 180px;
+	}
+	footer ul {
+		width: 80%;
+		display: flex;
+		flex-direction: row;
+		align-content: center;
+		justify-content: space-between;
+	}
+	footer a,
+	footer i {
+		font-size: 20px;
+	}
+
+	.banner-background {
+		margin-top: 28px;
+		height: 62px;
+	}
+	.banner-background h1 {
+		font-size: 34px;
+	}
+	/*home*/
+	.intro {
+		height: 800px;
+	}
+	.intro p {
+		width: 360px;
+		font-size: 60px;
+	}
+	.intro-logo {
+		font-size: 78px;
+	}
+	.intro a {
+		font-size: 40px;
+		top: 56%;
+	}
+
+	.slider {
+		height: 460px;
+		margin-top: 44px;
+	}
+	.slide {
+		display: flex;
+	}
+	.slide a h2 {
+		font-size: 32px;
+	}
+
+	.slide a {
+		font-size: 18px;
+	}
+	.slide a p {
+		font-size: 20px;
+	}
+	.slide a img {
+		height: 100%;
+	}
+	.slide-text {
+		padding: 10px;
+		margin-left: 15px;
+	}
+	.slide a,
+	.slide-text {
+		flex: 1;
+	}
+	.contact-page-title {
+		font-size: 38px;
+		width: 300px;
+	}
+	.contact-table-container {
+		height: 420px;
+		margin-bottom: 90px;
+	}
+	td {
+		font-size: 22px;
+	}
+	form {
+		height: 100%;
+		width: 60%;
+	}
+	label {
+		font-size: 20px;
+	}
+	input {
+		height: 30px;
+	}
+	textarea {
+		height: 100px;
+	}
+	form div {
+		margin-top: 20px;
+	}
+
+	.contact-button-container button {
+		font-size: 22px;
+		height: 38px;
+	}
+	.about-img {
+		height: 400px;
+	}
+	.who-are-we-container {
+		width: 60%;
+	}
+	.item-2 {
+		width: 80%;
+	}
+	.item-2 h2 {
+		font-size: 44px;
+	}
+	.item-2 p {
+		font-size: 22px;
+		line-height: 34px;
+	}
+
+	.blog {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 80px;
+		width: 80%;
+	}
+	.blog a {
+		height: 580px;
+	}
+	.blog img {
+		height: 60%;
+	}
+	.specific-post-header {
+		padding-left: 20%;
+		padding-right: 10%;
+	}
+	.specific-post-header h2 {
+		font-size: 44px;
+	}
+	.specific-post-header h3 {
+		font-size: 22px;
+	}
+	.featured-img img {
+		display: block;
+		height: 600px;
+		width: 800px;
+		margin: 20px auto;
+	}
+	.post-content {
+		width: 40%;
+		margin-bottom: 80px;
+	}
+}
+@media (min-width: 1200px) {
+	header {
+		height: 180px;
+	}
+	.logo {
+		height: 100px;
+	}
+
+	nav a {
+		font-size: 1.4em;
+	}
+	.banner-background {
+		margin-top: 40px;
+		height: 80px;
+	}
+	.banner-background h1 {
+		font-size: 44px;
+	}
+
+	.slider {
+		height: 600px;
+	}
+	.slide a {
+		font-size: 24px;
+	}
+	.slide a p {
+		font-size: 22px;
+	}
+}
